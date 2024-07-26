@@ -16,13 +16,13 @@ export class AppComponent {
 
   constructor(private router: Router) {}
 
-  ngOnInit() {
-    // Get the current URL
-    const initialUrl = window.location.pathname;
+  // ngOnInit() {
+  //   // Get the current URL
+  //   const initialUrl = window.location.pathname;
 
-    console.log(initialUrl);
+  //   console.log(initialUrl);
 
-    // Navigate to the route based on the initial URL
-    this.router.navigate([initialUrl]);
-  }
+  //   // Navigate to the route based on the initial URL
+  //   this.router.navigate([initialUrl]);
+  // }
 }
