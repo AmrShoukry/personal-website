@@ -231,7 +231,7 @@ export const certificatesSkillsArray = [
 export const certificatesArray = [
   {
     title: 'ALX Software Engineering 12 Month Program',
-    image: 'assets/images/certificates/agile.png',
+    image: 'assets/images/certificates/alx.png',
     text: 'Within this program, we actively engage in learning a diverse range of subjects, including C programming language, Graphic Programming, Unix Programming, Data Structure & Algorithms, Reverse Engineering & Security, Python, Front-end development, Linux/command line, and Infrastructure Design & Management.',
     link: 'https://www.google.com/',
   },
