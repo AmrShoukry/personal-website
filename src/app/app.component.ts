@@ -1,7 +1,8 @@
+import { Router, RouterOutlet } from '@angular/router';
+
 import { Component } from '@angular/core';
 import { FooterComponent } from './components/footer/footer.component';
 import { LinksComponent } from './components/navbar/links/links.component';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -13,5 +14,15 @@ import { RouterOutlet } from '@angular/router';
 export class AppComponent {
   title = 'personal-website';
 
-  constructor() {}
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+    // Get the current URL
+    const initialUrl = window.location.pathname;
+
+    console.log(initialUrl);
+
+    // Navigate to the route based on the initial URL
+    this.router.navigate([initialUrl]);
+  }
 }
