@@ -1,3 +1,7 @@
+[build]
+  publish = "docs/browser"
+  command = "ng build --prod"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
