@@ -1,0 +1,19 @@
+@import "../../../variables";
+
+footer {
+  background-color: $mainColor;
+  color: $reverseTextColor;
+  text-align: center;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  }
+}

@@ -1,0 +1,44 @@
+@import "../../../variables";
+
+.landing {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-image: linear-gradient(to bottom, $linearMain, $linearSecondary);
+  margin-bottom: 80px;
+
+  .image {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: -1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      z-index: -1;
+    }
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    @media (max-width: 768px) {
+      align-items: center;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: min(8vw, 80px);
+      font-weight: bold;
+      color: $reverseTextColor;
+    }
+  }
+}

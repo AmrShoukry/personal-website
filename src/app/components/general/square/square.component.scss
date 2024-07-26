@@ -1,0 +1,11 @@
+@import "../../../../variables";
+
+div {
+  width: 200px;
+  height: 200px;
+  background-color: $secondarySectionBackgroundColor;
+  border-radius: 16px;
+  box-shadow: $uiElementsShadow;
+  transform: rotate(-17deg);
+  overflow: hidden;
+}

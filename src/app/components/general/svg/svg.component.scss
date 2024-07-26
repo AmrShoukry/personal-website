@@ -1,0 +1,12 @@
+@import "../../../../variables";
+
+span {
+  display: block;
+  fill: $mainColor;
+  svg {
+    fill: $mainColor;
+    path {
+      fill: $mainColor;
+    }
+  }
+}

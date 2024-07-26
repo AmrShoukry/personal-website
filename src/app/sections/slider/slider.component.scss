@@ -1,0 +1,83 @@
+@import "./../../../variables";
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 32px;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    padding: 32px 0;
+  }
+
+  &.secondary {
+    background-color: $secondarySectionBackgroundColor;
+    border-radius: $sectionRadius;
+  }
+  h2 {
+    font-weight: bold;
+    font-size: 32px;
+    text-align: center;
+    color: $mainColor;
+    // word-wrap: break-word;
+  }
+
+  .slider-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+
+    .slider-item-container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      align-items: center;
+
+      button {
+        svg {
+          width: 40px;
+          height: 40px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
+
+      .inner-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 64px;
+
+        .title {
+          font-weight: bold;
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}
+
+.smallButtons {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 64px;
+  margin-top: 80px;
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
+}
+
+.sliderButtonBig {
+  display: flex;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}

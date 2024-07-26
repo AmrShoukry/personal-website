@@ -1,0 +1,51 @@
+@import "../../../variables";
+
+.landing {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 0;
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    .buttons {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    h1 {
+      font-size: min(8vw, 80px);
+      font-weight: bold;
+      color: $mainColor;
+    }
+    p {
+      text-align: justify;
+
+      @media (max-width: 768px) {
+        text-align: center;
+      }
+    }
+  }
+}
+
+app-circle {
+  position: absolute;
+  z-index: -1;
+  top: 35%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+}
+
+app-square {
+  position: absolute;
+  z-index: -1;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

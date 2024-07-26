@@ -1,0 +1,68 @@
+@import "../../../../variables";
+
+.links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  background-color: $NavbarBackground;
+  backdrop-filter: $glassyEffect;
+  width: fit-content;
+  border-radius: $mainRadius;
+  gap: 4px;
+  position: fixed;
+  z-index: 9;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: $NavbarShadow;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: calc(100vh - 80px);
+  word-break: unset;
+
+  button {
+    padding: 8px;
+    display: none;
+
+    .open {
+      display: flex;
+    }
+    .close {
+      display: none;
+    }
+    &.expanded {
+      .open {
+        display: none;
+      }
+      .close {
+        display: flex;
+      }
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    button {
+      display: block;
+    }
+
+    ul {
+      flex-direction: column;
+      display: none;
+
+      &.expanded {
+        display: flex;
+      }
+    }
+  }
+}

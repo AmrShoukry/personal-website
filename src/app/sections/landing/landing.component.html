@@ -1,0 +1,12 @@
+<div class="landing">
+  <app-circle></app-circle>
+  <app-square></app-square>
+  <div class="container">
+    <h1>{{aboutData.landingName}}</h1>
+    <p>{{aboutData.landingText}}</p>
+    <div class="buttons">
+      <app-button type="link" href="#getstarted" [anchor]="true" variant="fill" content="Get Started"></app-button>
+      <app-button type="link" href="/about" content="Learn More" [local]="true"></app-button>
+    </div>
+  </div>
+</div>

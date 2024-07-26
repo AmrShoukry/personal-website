@@ -1,0 +1,185 @@
+@import "../../../variables";
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 32px;
+
+  .buttonBig,
+  .buttonBigGroup {
+    display: flex;
+  }
+  .buttonSmall,
+  .buttonSmallGroup {
+    display: none;
+  }
+
+  @media (max-width: 992px) {
+    .buttonBigGroup {
+      display: none;
+    }
+    .buttonSmallGroup {
+      display: flex;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 32px 0;
+    .buttonBig {
+      display: none;
+    }
+    .buttonSmall {
+      display: flex;
+    }
+  }
+
+  &.secondary {
+    background-color: $secondarySectionBackgroundColor;
+    border-radius: $sectionRadius;
+  }
+  h2 {
+    font-weight: bold;
+    font-size: 32px;
+    text-align: center;
+    color: $mainColor;
+    // word-wrap: break-word;
+  }
+  .title {
+    font-weight: bold;
+    font-size: 24px;
+    // word-wrap: break-word;
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+  }
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    align-items: center;
+
+    .items-special-groups {
+      display: flex;
+      width: 80%;
+      padding: 64px;
+      gap: 64px;
+      align-items: center;
+      border-radius: $sectionRadius;
+
+      &:nth-of-type(odd) {
+        align-self: flex-start;
+        background-color: $secondarySectionBackgroundColor;
+      }
+      &:nth-of-type(even) {
+        align-self: flex-end;
+        box-shadow: $NavbarShadow;
+      }
+
+      @media (max-width: 1200px) {
+        width: 100%;
+        padding: 32px;
+      }
+      @media (max-width: 992px) {
+        flex-direction: column;
+      }
+
+      .text {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        @media (max-width: 992px) {
+          text-align: center;
+          align-items: center;
+        }
+      }
+    }
+
+    .items-group {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 32px;
+
+      // word-break: break-all;
+
+      &.items-image {
+        gap: 80px;
+      }
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
+
+      .item-group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 32px;
+        padding: 32px;
+        border-radius: $sectionRadius;
+
+        @media (max-width: 768px) {
+          padding: 32px;
+        }
+
+        &.item-bullets {
+          align-items: flex-start;
+          justify-content: flex-start;
+          gap: 8px;
+          background-color: $secondarySectionBackgroundColor;
+        }
+      }
+    }
+  }
+
+  .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 64px;
+    .text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+
+      .text {
+        align-items: center;
+      }
+    }
+
+    app-img {
+      flex-shrink: 0;
+    }
+  }
+}
+
+.text {
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+}
+
+.innerItem {
+  display: flex;
+  justify-content: flex-start;
+  gap: 16px;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+
+  .grade {
+    font-weight: bold;
+    font-size: 14px;
+    color: $mainColor;
+  }
+}
+
+// @media (max-width: 768px) {
+
+// }

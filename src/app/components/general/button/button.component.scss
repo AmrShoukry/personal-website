@@ -1,0 +1,27 @@
+@import "../../../../variables";
+
+button,
+a {
+  font-size: 14px;
+  border-radius: $mainRadius;
+  background-color: $mainColor;
+  padding: 12px 24px;
+  color: $reverseTextColor;
+  display: flex;
+  text-align: center;
+  width: fit-content;
+  gap: 8px;
+
+  &.outline {
+    border: 1px solid $mainColor;
+    color: $mainColor;
+    background-color: transparent;
+  }
+}
+
+svg {
+  fill: $mainColor;
+  path {
+    fill: $mainColor;
+  }
+}

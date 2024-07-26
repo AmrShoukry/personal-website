@@ -1,0 +1,9 @@
+@import "../../../../variables";
+
+div {
+  width: 200px;
+  height: 200px;
+  background-color: $secondarySectionBackgroundColor;
+  border-radius: 50%;
+  box-shadow: $uiElementsShadow;
+}

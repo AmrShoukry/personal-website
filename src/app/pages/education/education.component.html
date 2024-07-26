@@ -1,0 +1,9 @@
+<main>
+  <app-pages-landing [data]="educationData" href="/education#getstarted"></app-pages-landing>
+  <app-section [type]="'primary'" [variant]="'one'" [elements]="educationArray" [link]="false"
+    id="getstarted"></app-section>
+  <app-section [type]="'primary'" [variant]="'two'" [head]="'Syllabus'" [elements]="syllabusArray" [link]="false">
+  </app-section>
+  <app-section [type]="'primary'" [variant]="'two'" [head]="'Associated Projects'" [elements]="educationProjectsArray"
+    [link]="false" [groups]="true"></app-section>
+</main>

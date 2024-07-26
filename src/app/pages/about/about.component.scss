@@ -1,0 +1,81 @@
+@import "../../../variables";
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+  @media (max-width: 992px) {
+    padding: 32px;
+    padding-top: 128px;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    gap: 96px;
+
+    @media (max-width: 992px) {
+      flex-direction: column;
+    }
+
+    .text {
+      display: flex;
+      flex-direction: column;
+      h1 {
+        font-size: min(64px, 7vw);
+        font-weight: bold;
+        color: $mainColor;
+      }
+
+      h3 {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      p {
+        margin: 32px 0;
+        text-align: justify;
+        @media (max-width: 992px) {
+          text-align: center;
+        }
+      }
+      @media (max-width: 992px) {
+        text-align: center;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+
+      @media (max-width: 992px) {
+        justify-content: center;
+      }
+
+      li {
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 64px;
+          height: 64px;
+          border-radius: 8px;
+          background-color: gray;
+          background-color: $reverseTextColor;
+          box-shadow: $NavbarShadow;
+          color: $mainColor;
+
+          svg {
+            path {
+              fill: $mainColor;
+            }
+          }
+        }
+      }
+    }
+  }
+}

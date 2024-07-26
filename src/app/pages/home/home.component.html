@@ -1,0 +1,20 @@
+<main>
+  <app-landing></app-landing>
+  <div class="sections">
+    <app-section [type]="'secondary'" [variant]="'one'" [head]="sectionNames.education" [elements]="educationArray"
+      [href]="'/education'" [local]="true" [link]="true" id="getstarted">
+      ></app-section>
+    <app-slider [type]="'primary'" [variant]="'two'" [head]="sectionNames.projects" [elements]="projectsArray"
+      [href]="'/projects'" [local]="true" [link]="true">
+    </app-slider>
+    <app-section [type]="'secondary'" [variant]="'one'" [head]="sectionNames.activities" [elements]="activitiesArray"
+      [href]="'/activities'" [local]="true" [link]="true">
+      ></app-section>
+    <app-slider [type]="'primary'" [variant]="'two'" [head]="sectionNames.certificates" [elements]="certificatesArray"
+      [href]="'/certificates'" [local]="true" [link]="true">
+    </app-slider>
+    <app-section [type]="'primary'" [variant]="'two'" [head]="sectionNames.skills" [elements]="skillsArray"
+      [link]="false">
+    </app-section>
+  </div>
+</main>

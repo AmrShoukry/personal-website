@@ -1,0 +1,20 @@
+<main>
+  <div class="container">
+    <app-image src={{aboutData.image}}></app-image>
+    <div class="text">
+      <h1>{{aboutData.name}}</h1>
+      <h3>{{aboutData.title}}</h3>
+      <p>{{aboutData.text}}</p>
+
+      <ul class="links">
+        @for (item of aboutData.links; track item) {
+        <li>
+          <a target="_blank" [href]="item.link">
+            <app-svg [svgContent]="item.icon"></app-svg>
+          </a>
+        </li>
+        }
+      </ul>
+    </div>
+  </div>
+</main>

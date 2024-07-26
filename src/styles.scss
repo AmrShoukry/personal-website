@@ -1,1 +1,117 @@
 /* You can add global styles to this file, and also import other style files */
+@import "bootstrap/scss/bootstrap";
+@import "./variables";
+
+@font-face {
+  font-family: "Inter";
+  src: url("assets/fonts/inter/Inter-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Medium Weight */
+@font-face {
+  font-family: "Inter";
+  src: url("assets/fonts/inter/Inter-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Bold Weight */
+@font-face {
+  font-family: "Inter";
+  src: url("assets/fonts/inter/Inter-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* ExtraBold Weight */
+@font-face {
+  font-family: "Inter";
+  src: url("assets/fonts/inter/Inter-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* Black Weight */
+@font-face {
+  font-family: "Inter";
+  src: url("assets/fonts/inter/Inter-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Apply the Inter font to the whole website */
+body {
+  font-family: "Inter", sans-serif;
+}
+html {
+  color: $mainTextColor;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  margin-bottom: 0;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: "Inter", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+section {
+  margin-bottom: 80px;
+}
+
+/* Custom scrollbar styling for WebKit browsers */
+::-webkit-scrollbar {
+  width: 14px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: $mainColor; /* Light background for the track */
+  border-radius: 10px; /* Rounded corners for the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: $mainColor; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners for the thumb */
+  border: 3px solid white; /* Border around the thumb for better visibility */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $mainColor; /* Darker color for the thumb on hover */
+}
+
+/* Custom scrollbar styling for Firefox */
+* {
+  scrollbar-width: auto; /* Width of the scrollbar */
+  scrollbar-color: $linearMain #efefef; /* Thumb color and track color */
+  font-family: "Inter", sans-serif;
+
+  @media (max-width: 222px) {
+    // word-break: break-all;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: min(9vw, 16px) !important;
+    padding: 4px 0;
+  }
+}

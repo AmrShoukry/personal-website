@@ -1,0 +1,54 @@
+@import "../../../../_variables";
+
+.imageContainer {
+  width: 300px;
+  height: 300px;
+  @media (max-width: 768px) {
+    width: 50vw;
+    height: 50vw;
+  }
+  border-radius: $imgRadius;
+  position: relative;
+  z-index: 1;
+
+  .actualImage {
+    width: 100%;
+    height: 100%;
+    border-radius: $imgRadius;
+    position: absolute;
+    z-index: 2;
+    overflow: hidden;
+    box-shadow: $NavbarShadow;
+
+    img {
+      object-fit: cover;
+      object-position: center center;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .back {
+    width: 100%;
+    height: 100%;
+    background-color: $imageBorderColor;
+    border-radius: $imgRadius;
+    position: absolute;
+    z-index: 1;
+    transform: rotate(-10deg);
+  }
+
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   background-color: gray;
+  //   border-radius: $imgRadius;
+  //   z-index: 2;
+  //   transform: rotate(-17deg);
+  //   z-index: 0;
+  // }
+}

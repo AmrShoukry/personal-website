@@ -1,0 +1,73 @@
+<div class="container">
+  <section [ngClass]="{'secondary': type === 'secondary'}">
+    @if (head) {
+    <h2>{{head}}</h2>
+    }
+    @if (elements.length === 1 && elements[0].image) {
+    <div class="item">
+      <div class="text">
+        <p class="title">{{elements[0].title}}</p>
+        <p class="text">{{elements[0].text}}</p>
+        @if (link === true) {
+        <app-button [href]="href" [local]="local" class="buttonBig"></app-button>
+        }
+      </div>
+      <app-image src={{elements[0].image}}></app-image>
+      @if (link === true) {
+      <app-button [href]="href" [local]="local" class="buttonSmall"></app-button>
+      }
+
+    </div>
+    } @else {
+    <div class="items">
+      @if (groups) {
+      <div class="items-special-groups" *ngFor="let element of elements; let i = index">
+        <div class="text">
+          <div class="title">{{element.title}}</div>
+          <div class="description">{{element.text}}</div>
+          @if (element.link) {
+          <app-button [href]="element.link" class="buttonBigGroup" variant="outline-icon"
+            content="Explore"></app-button>
+          }
+        </div>
+        @if (element.image) {
+        <app-image [src]="element.image"></app-image>
+        }
+        @if (element.link) {
+        <app-button [href]="element.link" class="buttonSmallGroup" variant="outline-icon"
+          content="Explore"></app-button>
+        }
+
+      </div>
+      } @else {
+      <div class="items-group" [ngClass]="{'items-image': elements[0].image}">
+        <div *ngFor="let element of elements; let i = index" class="item-group"
+          [ngClass]="{'item-bullets': element.bullets}">
+          @if (element.grade) {
+          <div class="innerItem">
+            <p class="title">{{ element.title }}</p>
+            <p class="grade">{{element.grade}}</p>
+          </div>
+          } @else {
+          <p class="title">{{ element.title }}</p>
+          @if (element.image) {
+          <app-image [src]="element.image"></app-image>
+          }
+          }
+          @if (element.bullets) {
+          <ul class="bullets">
+            <li *ngFor="let bullet of element.bullets">{{ bullet }}</li>
+          </ul>
+          }
+        </div>
+      </div>
+      }
+      <ng-container *ngIf="link">
+        <app-button [href]="href" [local]="local" class="button"></app-button>
+      </ng-container>
+    </div>
+
+
+    }
+  </section>
+</div>
