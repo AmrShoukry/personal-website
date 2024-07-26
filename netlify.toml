@@ -1,5 +1,5 @@
 [build]
-  command = "npm install && ng build --prod --output-path docs --base-href personal-website"
+  command = "npm install && ng build --output-path docs --base-href personal-website"
   publish = "docs/browser"
 
 [[redirects]]
