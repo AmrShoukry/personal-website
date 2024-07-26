@@ -1,6 +1,6 @@
 [build]
   command = "npm install && ng build --output-path docs --base-href personal-website"
-  publish = "docs/browser"
+  publish = "browser"
 
 [[redirects]]
   from = "/*"
