@@ -232,8 +232,8 @@ export const certificatesArray = [
   {
     title: 'ALX Software Engineering 12 Month Program',
     image: 'assets/images/certificates/alx.png',
-    text: 'Within this program, we actively engage in learning a diverse range of subjects, including C programming language, Graphic Programming, Unix Programming, Data Structure & Algorithms, Reverse Engineering & Security, Python, Front-end development, Linux/command line, and Infrastructure Design & Management.',
-    link: 'https://www.google.com/',
+    text: 'Throughout the program, I engaged in a diverse range of subjects, including C programming, Unix Programming, Data Structures & Algorithms, the basics of Reverse Engineering & Security, Python, Linux/command line, Infrastructure Design & Management, JavaScript, TypeScript, React, HTML, CSS, SASS, Git, and GitHub.',
+    link: 'https://intranet.alxswe.com/certificates/JfpRELHBG6',
   },
   // {
   //   title: 'ITI .NET Full Stack Developer',
