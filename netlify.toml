@@ -2,3 +2,7 @@
   command = "npm install && ng build --output-path docs"
   publish = "browser"
 
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
