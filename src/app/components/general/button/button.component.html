@@ -1,6 +1,6 @@
 <ng-container *ngIf="type === 'link'; else buttonTemplate">
   @if (local) {
-  <a [routerLink]="href" [ngClass]="{'fill': variant === 'fill', 'outline': variant === 'outline' }">{{content}}</a>
+  <a [href]="href" [ngClass]="{'fill': variant === 'fill', 'outline': variant === 'outline' }">{{content}}</a>
   } @else {
   @if (anchor) {
   <a [attr.href]="href" [ngClass]="{'fill': variant === 'fill', 'outline': variant === 'outline' }">{{content}}</a>
