@@ -18,7 +18,6 @@ export class ClickOutsideDirective {
   @HostListener('document:click', ['$event'])
   onClick(event: MouseEvent): void {
     // Check if the clicked element is inside the directive's host element
-    console.log('ss');
     if (!this._elementRef.nativeElement.contains(event.target)) {
       this.appClickOutside.emit();
     }

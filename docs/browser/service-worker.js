@@ -1,4 +1,4 @@
-const CACHE_NAME = "my-cache-v6";
+const CACHE_NAME = "my-cache-v2";
 const URLs_TO_CACHE = [
   "/index.html",
   "/assets/images/about/amrshoukry.png",
@@ -29,6 +29,7 @@ const URLs_TO_CACHE = [
   "/assets/images/projects/whisper.png",
 
   "/favicon.ico",
+  "/manifest.json",
   "/styles.css",
   "/service-worker.js",
   "/polyfills.js",
@@ -52,8 +53,9 @@ self.addEventListener("install", (event) => {
   self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      console.log("Opened cache");
-      return cache.addAll(URLs_TO_CACHE);
+      return Promise.all(
+        URLs_TO_CACHE.map((url) => cache.add(url).catch((err) => {}))
+      );
     })
   );
 });
