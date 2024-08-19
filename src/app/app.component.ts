@@ -20,8 +20,6 @@ export class AppComponent {
   //   // Get the current URL
   //   const initialUrl = window.location.pathname;
 
-  //   console.log(initialUrl);
-
   //   // Navigate to the route based on the initial URL
   //   this.router.navigate([initialUrl]);
   // }

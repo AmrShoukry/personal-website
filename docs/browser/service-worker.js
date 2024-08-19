@@ -33,6 +33,12 @@ const URLs_TO_CACHE = [
   "/polyfills.js",
   "/main.js",
 
+  "/main-QVGWOUDO.js ",
+  "/polyfills-SCHOHYNV.js",
+  "/styles-W5JOW7K4.css",
+  "/media/Inter-Regular-CKBOXRQ3.ttf",
+  "/media/Inter-Bold-YFDNZKYU.ttf",
+
   "/",
   "/education",
   "/projects",
