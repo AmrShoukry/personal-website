@@ -1,9 +1,16 @@
-import { Component, Input, OnDestroy, OnInit, signal } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnDestroy,
+  OnInit,
+  Inject,
+  PLATFORM_ID,
+} from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 import { ButtonComponent } from '../../components/general/button/button.component';
 import { CommonModule } from '@angular/common';
 import { ImageComponent } from '../../components/general/image/image.component';
-import { interval } from 'rxjs';
 
 interface SectionElement {
   title: string;
@@ -27,66 +34,59 @@ export class SliderComponent implements OnInit, OnDestroy {
   @Input() link: boolean = true;
   @Input() local: boolean = false;
 
-  sliderIndex = signal<number>(0);
+  sliderIndex = 0; // Use a simple number for the index
   intervalId: any = null; // Initialize intervalId
+  readonly slideInterval = 5000; // Interval for changing slides
 
-  // constructor() {
-  //   if (this.intervalId) {
-  //     clearInterval(this.intervalId);
-  //     this.intervalId = null;
-  //   }
-  //   this.intervalId = setInterval(() => {
-  //     console.log('555');
-  //   }, 10000); // Change index every 10 seconds
-  // }
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngOnInit() {
-    // const obj = interval(1000);
-    // obj.subscribe((d) => {
-    //   console.log(d);
-    // });
-    // if (this.intervalId) {
-    //   clearInterval(this.intervalId);
-    //   this.intervalId = null;
-    // }
-    // this.intervalId = setInterval(() => {
-    //   console.log('555');
-    // }, 10000); // Change index every 10 seconds
+    if (isPlatformBrowser(this.platformId) && this.elements.length > 0) {
+      this.startTimer();
+    }
   }
 
   ngOnDestroy() {
     this.clearTimer();
   }
 
-  startTimer() {}
+  startTimer() {
+    // Clear existing timer if any
+    this.clearTimer();
+
+    // Set up an interval to change slides automatically
+    this.intervalId = setInterval(() => {
+      this.incrementIndex();
+    }, this.slideInterval);
+  }
 
   clearTimer() {
+    // Clear the interval if it exists
     if (this.intervalId) {
       clearInterval(this.intervalId);
       this.intervalId = null; // Reset intervalId
     }
   }
 
-  // Only reset the timer on user interaction, not on automatic index change
   resetTimer() {
+    // Reset and start the timer
     this.clearTimer();
     this.startTimer();
   }
 
   incrementIndex() {
-    this.sliderIndex.update(
-      (oldValue) => (oldValue + 1) % this.elements.length
-    );
+    // Update slider index to show the next slide
+    this.sliderIndex = (this.sliderIndex + 1) % this.elements.length;
   }
 
   decrementIndex() {
-    this.sliderIndex.update(
-      (oldValue) => (oldValue - 1 + this.elements.length) % this.elements.length
-    );
+    // Update slider index to show the previous slide
+    this.sliderIndex =
+      (this.sliderIndex - 1 + this.elements.length) % this.elements.length;
   }
 
-  // Method to be called when user interacts with navigation
   onUserInteraction() {
+    // Handle user interaction and reset the timer
     this.resetTimer();
   }
 }

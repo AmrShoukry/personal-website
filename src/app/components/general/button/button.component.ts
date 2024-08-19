@@ -21,7 +21,7 @@ export class ButtonComponent {
 
   constructor() {
     effect(() => {
-      console.log(this.variant);
+      // console.log(this.variant);
     });
   }
 }
