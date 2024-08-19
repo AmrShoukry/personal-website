@@ -1,6 +1,6 @@
 const CACHE_NAME = "my-cache-v6";
 const URLs_TO_CACHE = [
-  "/index.html"
+  "/index.html",
   "/assets/images/about/amrshoukry.png",
 
   "/assets/images/activities/activities.png",
@@ -58,10 +58,10 @@ self.addEventListener("install", (event) => {
   );
 });
 
-self.addEventListener('fetch', (event) => {
-  if (event.request.mode === 'navigate') {
+self.addEventListener("fetch", (event) => {
+  if (event.request.mode === "navigate") {
     event.respondWith(
-      caches.match('/index.html').then((response) => {
+      caches.match("/index.html").then((response) => {
         return response || fetch(event.request);
       })
     );
