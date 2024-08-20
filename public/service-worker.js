@@ -1,4 +1,4 @@
-const CACHE_NAME = "my-cache-v1";
+const CACHE_NAME = "my-cache-v2";
 const URLs_TO_CACHE = [
   "/index.html",
   "/assets/images/about/amrshoukry.jpg",
