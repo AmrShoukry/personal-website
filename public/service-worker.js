@@ -1,4 +1,4 @@
-const CACHE_NAME = "my-cache-v2";
+const CACHE_NAME = "my-cache-v1";
 const URLs_TO_CACHE = [
   "/index.html",
   "/assets/images/about/amrshoukry.jpg",
@@ -64,10 +64,9 @@ self.addEventListener("install", (event) => {
 
 self.addEventListener("fetch", (event) => {
   if (event.request.method === "GET") {
-    let url =
-      event.request.url.indexOf(self.location.origin) !== -1
-        ? event.request.url.split(`${self.location.origin}/`)[1]
-        : event.request.url;
+    let url = event.request.url.includes(self.location.origin)
+      ? event.request.url.split(`${self.location.origin}/`)[1]
+      : event.request.url;
     let isFileCached = URLs_TO_CACHE.indexOf(url) !== -1;
 
     if (isFileCached) {
@@ -75,15 +74,22 @@ self.addEventListener("fetch", (event) => {
         caches
           .open(CACHE_NAME)
           .then((cache) => {
-            return cache.match(url).then((response) => {
+            return cache.match(event.request).then((response) => {
               if (response) {
                 return response;
               }
-              throw Error("There is not response for such request", url);
+              // If not in the cache, fetch from the network
+              return fetch(event.request).then((networkResponse) => {
+                if (networkResponse) {
+                  cache.put(event.request, networkResponse.clone());
+                }
+                return networkResponse;
+              });
             });
           })
-          .catch((error) => {
-            return fetch(event.request);
+          .catch(() => {
+            // If offline and the request is not cached, provide a fallback response
+            return caches.match("/index.html"); // Make sure to cache an offline page
           })
       );
     }
