@@ -1,4 +1,4 @@
-const CACHE_NAME = "my-cache-v1";
+const CACHE_NAME = "my-cache-v2";
 const URLs_TO_CACHE = [
   "/index.html",
   "/assets/images/about/amrshoukry.jpg",
@@ -63,18 +63,30 @@ self.addEventListener("install", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
-  if (event.request.mode === "navigate") {
-    event.respondWith(
-      caches.match("/index.html").then((response) => {
-        return response || fetch(event.request);
-      })
-    );
-  } else {
-    event.respondWith(
-      caches.match(event.request).then((response) => {
-        return response || fetch(event.request);
-      })
-    );
+  if (event.request.method === "GET") {
+    let url =
+      event.request.url.indexOf(self.location.origin) !== -1
+        ? event.request.url.split(`${self.location.origin}/`)[1]
+        : event.request.url;
+    let isFileCached = URLs_TO_CACHE.indexOf(url) !== -1;
+
+    if (isFileCached) {
+      event.respondWith(
+        caches
+          .open(CACHE_NAME)
+          .then((cache) => {
+            return cache.match(url).then((response) => {
+              if (response) {
+                return response;
+              }
+              throw Error("There is not response for such request", url);
+            });
+          })
+          .catch((error) => {
+            return fetch(event.request);
+          })
+      );
+    }
   }
 });
 
