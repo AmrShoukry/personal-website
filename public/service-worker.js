@@ -65,9 +65,14 @@ self.addEventListener("install", (event) => {
 self.addEventListener("fetch", (event) => {
   if (event.request.mode === "navigate") {
     event.respondWith(
-      caches.match("/index.html").then((response) => {
-        return response || fetch(event.request);
-      })
+      caches
+        .match("/index.html")
+        .then((response) => {
+          return response || fetch(event.request);
+        })
+        .then((response) => {
+          return response;
+        })
     );
   } else {
     event.respondWith(
