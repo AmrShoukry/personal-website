@@ -1,4 +1,11 @@
-const CACHE_NAME = "my-cache-v1";
+const CACHE_NAME = "my-cache-v2";
+const pathsToCache = [
+  "/projects",
+  "/education",
+  "/activities",
+  "/certificates",
+  "/about",
+];
 const URLs_TO_CACHE = [
   "/index.html",
   "/assets/images/about/amrshoukry.jpg",
@@ -63,36 +70,34 @@ self.addEventListener("install", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
-  if (event.request.method === "GET") {
-    let url = event.request.url.includes(self.location.origin)
-      ? event.request.url.split(`${self.location.origin}/`)[1]
-      : event.request.url;
-    let isFileCached = URLs_TO_CACHE.indexOf(url) !== -1;
+  const url = new URL(event.request.url);
 
-    if (isFileCached) {
-      event.respondWith(
-        caches
-          .open(CACHE_NAME)
-          .then((cache) => {
-            return cache.match(event.request).then((response) => {
-              if (response) {
-                return response;
-              }
-              // If not in the cache, fetch from the network
-              return fetch(event.request).then((networkResponse) => {
-                if (networkResponse) {
-                  cache.put(event.request, networkResponse.clone());
-                }
-                return networkResponse;
-              });
+  if (pathsToCache.includes(url.pathname)) {
+    event.respondWith(
+      caches.match(url.pathname).then((response) => {
+        return (
+          response ||
+          fetch(url.pathname).then((networkResponse) => {
+            return caches.open(CACHE_NAME).then((cache) => {
+              cache.put(url.pathname, networkResponse.clone());
+              return networkResponse;
             });
           })
-          .catch(() => {
-            // If offline and the request is not cached, provide a fallback response
-            return caches.match("/index.html"); // Make sure to cache an offline page
-          })
-      );
-    }
+        );
+      })
+    );
+  } else if (event.request.mode === "navigate") {
+    event.respondWith(
+      caches.match("/index.html").then((response) => {
+        return response || fetch(event.request);
+      })
+    );
+  } else {
+    event.respondWith(
+      caches.match(event.request).then((response) => {
+        return response || fetch(event.request);
+      })
+    );
   }
 });
 
