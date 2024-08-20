@@ -1,4 +1,4 @@
-const CACHE_NAME = "my-cache-v1";
+const CACHE_NAME = "my-cache-v2";
 const pathsToCache = [
   "/projects",
   "/education",
@@ -42,13 +42,15 @@ const URLs_TO_CACHE = [
   "/polyfills.js",
   "/main.js",
 
-  "/main-QVGWOUDO.js ",
+  "/main-QVGWOUDO.js",
+  "/main-TKUHRUET.js",
   "/polyfills-SCHOHYNV.js",
   "/styles-W5JOW7K4.css",
   "/media/Inter-Regular-CKBOXRQ3.ttf",
   "/media/Inter-Bold-YFDNZKYU.ttf",
   "/media/Inter-Regular.ttf",
   "/media/Inter-Bold.ttf",
+  "/icons/icon-144x144.png",
 
   "/",
   "/education",
