@@ -1,4 +1,4 @@
-const CACHE_NAME = "my-cache-v1";
+const CACHE_NAME = "my-cache-v2";
 const pathsToCache = [
   "/projects",
   "/education",
@@ -72,11 +72,20 @@ self.addEventListener("install", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
-  event.respondWith(
-    caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
-    })
-  );
+  if (event.request.mode === "navigate") {
+    console.log("NAVIGATING");
+    event.respondWith(
+      caches.match("/index.html").then((response) => {
+        return response || fetch(event.request);
+      })
+    );
+  } else {
+    event.respondWith(
+      caches.match(event.request).then((response) => {
+        return response || fetch(event.request);
+      })
+    );
+  }
 });
 
 self.addEventListener("activate", (event) => {
