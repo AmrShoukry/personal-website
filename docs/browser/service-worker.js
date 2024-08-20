@@ -1,4 +1,4 @@
-const CACHE_NAME = "my-cache-v2";
+const CACHE_NAME = "my-cache-v1";
 const pathsToCache = [
   "/projects",
   "/education",
@@ -73,7 +73,7 @@ self.addEventListener("install", (event) => {
 
 self.addEventListener("fetch", (event) => {
   if (event.request.mode === "navigate") {
-    console.log("NAVIGATING");
+    // console.log("NAVIGATING");
     event.respondWith(
       caches.match("/index.html").then((response) => {
         return response || fetch(event.request);
