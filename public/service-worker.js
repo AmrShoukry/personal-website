@@ -1,4 +1,4 @@
-const CACHE_NAME = "my-cache-v2";
+const CACHE_NAME = "my-cache-v1";
 const pathsToCache = [
   "/projects",
   "/education",
@@ -70,23 +70,7 @@ self.addEventListener("install", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
-  const url = new URL(event.request.url);
-
-  if (pathsToCache.includes(url.pathname)) {
-    event.respondWith(
-      caches.match(url.pathname).then((response) => {
-        return (
-          response ||
-          fetch(url.pathname).then((networkResponse) => {
-            return caches.open(CACHE_NAME).then((cache) => {
-              cache.put(url.pathname, networkResponse.clone());
-              return networkResponse;
-            });
-          })
-        );
-      })
-    );
-  } else if (event.request.mode === "navigate") {
+  if (event.request.mode === "navigate") {
     event.respondWith(
       caches.match("/index.html").then((response) => {
         return response || fetch(event.request);
