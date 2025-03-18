@@ -1,4 +1,4 @@
-const CACHE_NAME = "my-cache-v3";
+const CACHE_NAME = "my-cache-v1";
 const pathsToCache = [
   "/projects",
   "/education",

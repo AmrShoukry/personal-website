@@ -203,7 +203,7 @@ export const projectsArray = [
     title: 'Personal Website',
     image: 'assets/images/projects/personalwebsite.jpg',
     text: 'Designed and developed my personal website using Figma for design, Angular for the framework, and Sass (CSS preprocessor) for styling.',
-    link: 'https://github.com/AmrShoukry/personal-website',
+    link: 'https://amrshoukry.netlify.app/',
   },
   {
     title: 'Whisper Real Time Chat Application',
