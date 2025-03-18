@@ -1,5 +1,6 @@
 import {
   activitiesArray,
+  awardsArray,
   certificatesArray,
   educationArray,
   projectsArray,
@@ -24,6 +25,7 @@ export class HomeComponent {
   projectsArray = projectsArray;
   certificatesArray = certificatesArray;
   activitiesArray = activitiesArray.slice(0, 2);
+  awardsArray = awardsArray;
   skillsArray = skillsArray;
   sectionNames = sectionNames;
 }
