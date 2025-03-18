@@ -11,17 +11,37 @@ a {
   text-align: center;
   width: fit-content;
   gap: 8px;
+  transition: $transitionMedium;
+
+  &:hover {
+    background-color: $reverseTextColor;
+    color: $mainColor;
+  }
 
   &.outline {
     border: 1px solid $mainColor;
     color: $mainColor;
     background-color: transparent;
-  }
-}
 
-svg {
-  fill: $mainColor;
-  path {
-    fill: $mainColor;
+    svg {
+      fill: $mainColor;
+      transition: $transitionMedium;
+      path {
+        transition: $transitionMedium;
+        fill: $mainColor;
+      }
+    }
+
+    &:hover {
+      background-color: $mainColor;
+      color: $reverseTextColor;
+
+      svg {
+        fill: $reverseTextColor;
+        path {
+          fill: $reverseTextColor;
+        }
+      }
+    }
   }
 }

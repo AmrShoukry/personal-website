@@ -9,7 +9,7 @@
       <ul class="links">
         @for (item of aboutData.links; track item) {
         <li>
-          <a target="_blank" [href]="item.link">
+          <a target="_blank" [href]="item.link" class="link">
             <app-svg [svgContent]="item.icon"></app-svg>
           </a>
         </li>

@@ -64,15 +64,12 @@ main {
           width: 64px;
           height: 64px;
           border-radius: 8px;
-          background-color: gray;
           background-color: $reverseTextColor;
           box-shadow: $NavbarShadow;
           color: $mainColor;
-
-          svg {
-            path {
-              fill: $mainColor;
-            }
+          transition: $transitionMedium;
+          &:hover {
+            background-color: $mainColor;
           }
         }
       }

@@ -1,4 +1,4 @@
-const CACHE_NAME = "my-cache-v1";
+const CACHE_NAME = "my-cache-v2";
 const pathsToCache = [
   "/projects",
   "/education",
@@ -34,6 +34,9 @@ const URLs_TO_CACHE = [
   "/assets/images/projects/projects.jpg",
   "/assets/images/projects/simplemedia.jpg",
   "/assets/images/projects/whisper.jpg",
+  "/assets/images/projects/qiyam.png",
+  "/assets/images/projects/ArchivAI.png",
+  "/assets/images/projects/smartSparks.png",
 
   "/favicon.ico",
   "/manifest.json",

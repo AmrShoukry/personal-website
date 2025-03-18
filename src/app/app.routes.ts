@@ -12,6 +12,7 @@ import { EducationComponent } from './pages/education/education.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
+import { AwardsComponent } from './pages/awards/awards.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,6 +20,7 @@ export const routes: Routes = [
   { path: 'projects', component: ProjectsComponent },
   { path: 'activities', component: ActivitiesComponent },
   { path: 'certificates', component: CertificatesComponent },
+  { path: 'awards', component: AwardsComponent },
   { path: 'about', component: AboutComponent },
   { path: '*', component: NotfoundComponent },
   { path: '**', component: NotfoundComponent },

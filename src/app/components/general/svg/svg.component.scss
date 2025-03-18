@@ -3,10 +3,23 @@
 span {
   display: block;
   fill: $mainColor;
+  transition: $transitionMedium;
+
   svg {
     fill: $mainColor;
     path {
       fill: $mainColor;
+    }
+  }
+}
+
+:host-context(.link:hover) span {
+  fill: $reverseTextColor;
+
+  svg {
+    fill: $reverseTextColor;
+    path {
+      fill: $reverseTextColor;
     }
   }
 }

@@ -4,6 +4,14 @@ li {
   overflow: hidden;
   border-radius: $mainRadius;
   font-size: 16px;
+  transition: $transitionMedium;
+
+  &:hover:not(.active) {
+    background-color: $activeLinkBackgroundColor;
+    // a {
+    //   color: $reverseTextColor;
+    // }
+  }
 
   &.active {
     background-color: $activeLinkBackgroundColor;

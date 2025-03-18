@@ -7,6 +7,7 @@ export const sectionNames = {
   projects: 'Projects 💼',
   activities: 'Activities 🤝',
   certificates: 'Certificates 🎉',
+  awards: 'Awards 🏆',
   skills: 'Skills 🪜',
 };
 
@@ -15,9 +16,9 @@ export const aboutData = {
   landingName: '👋 Amr Shoukry',
   name: 'Amr Shoukry',
   landingText:
-    'I am Amr Shoukry, a Computer Science student at Mansoura University, Egypt, and a graduate of the ALX Software Engineering program. I specialize in front-end technologies and am skilled in C, Python, JavaScript, and TypeScript. My expertise includes Git, command-line interfaces, OOP, data structures, algorithms, React, and GraphQL. With a background in leadership and teamwork through volunteering, I am committed to continuous learning and aspire to become a job-ready front-end developer, building scalable and user-friendly web applications. I am also excited about the prospect of becoming an AI engineer in the future',
-  text: 'I am Amr Shoukry, a Computer Science student at Mansoura University, Egypt, with a strong foundation in both theoretical and practical aspects of software engineering. A graduate of the ALX Software Engineering program, I have honed my skills in front-end technologies and gained extensive experience in programming languages such as C, Python, JavaScript, and TypeScript. My technical expertise includes proficiency in Git and GitHub, command-line interfaces, and a solid understanding of object-oriented programming (OOP), data structures, algorithms, and React. I have also explored GraphQL, expanding my knowledge of modern web technologies. My experience extends beyond technical skills to include leadership and teamwork, demonstrated through various volunteering roles. I am passionate about continuous learning and dedicated to applying my skills in innovative environments. My goal is to become a front-end developer capable of building scalable and user-friendly web applications, contributing effectively to dynamic teams and projects.',
-  title: 'Software Engineer',
+    'Results-driven Front-End Developer with a strong foundation in React, Next.js, TypeScript, and modern UI frameworks. Skilled in building scalable, high-performance applications with a strong focus on user experience and accessibility. Well-versed in real-time communication, localization, and API integrations. Recognized for leadership in collaborative development environments.',
+  text: 'Results-driven Front-End Developer with a strong foundation in React, Next.js, TypeScript, and modern UI frameworks. Skilled in building scalable, high-performance applications with a strong focus on user experience and accessibility. Well-versed in real-time communication, localization, and API integrations. Recognized for leadership in collaborative development environments.',
+  title: 'Front-End Developer',
   links: [
     {
       icon: linkedin,
@@ -181,15 +182,33 @@ export const projectsSkillsArray = [
 
 export const projectsArray = [
   {
+    title: 'Qiyam Academy',
+    image: 'assets/images/projects/qiyam.png',
+    text: 'Developing an Islamic academy platform using Next.js, Motion Framer, React Hook Form, Tailwind CSS, React Query, React, and TypeScript.',
+    link: 'https://qiyam.eu',
+  },
+  {
+    title: 'ArchivAI',
+    image: 'assets/images/projects/ArchivAI.png',
+    text: 'As my graduation project, Developing ArchivAI, a document management system with a React, Next.js, and TypeScript front-end. It features real-time updates (SignalR), file previewers, Tailwind CSS UI, Motion Framer animations, localization, push notifications, and optimized data fetching with React Query for a seamless user experience.',
+    link: 'https://archivai.net',
+  },
+  {
+    title: 'Smart Sparks',
+    image: 'assets/images/projects/smartSparks.png',
+    text: 'Built the front-end of a customer service app using Next.js, React, and TypeScript, integrating WhatsApp message classification. I implemented responsive design with Tailwind CSS, animations with Motion Framer, and real-time communication with Socket.IO.',
+    link: 'https://github.com/SmartSparks-Victoris/victories-frontend/',
+  },
+  {
     title: 'Personal Website',
     image: 'assets/images/projects/personalwebsite.jpg',
-    text: 'I designed and developed my personal website using Figma for the design process. The website was built with Angular as the application framework and styled with Sass',
+    text: 'Designed and developed my personal website using Figma for design, Angular for the framework, and Sass (CSS preprocessor) for styling.',
     link: 'https://github.com/AmrShoukry/personal-website',
   },
   {
     title: 'Whisper Real Time Chat Application',
     image: 'assets/images/projects/whisper.jpg',
-    text: 'I contributed to the front-end development of Whisper, utilizing technologies such as React and TypeScript. I leveraged React libraries like Zustand for state management, Styled Components for styling, Material UI for design, React Hook Form for form handling, and React Router for navigation. Additionally, I integrated Apollo for GraphQL and Axios for fetching REST endpoints',
+    text: 'Contributed to the front-end development of Whisper, utilizing technologies such as React and TypeScript. I leveraged React libraries like Zustand for state management, Styled Components for styling, Material UI for design, React Hook Form for form handling, and React Router for navigation. Additionally, I integrated Apollo for GraphQL and Axios for fetching REST endpoints and used Socket.IO for real-time communication.',
     link: 'https://github.com/WalaEddine01/Whisper',
   },
   {
@@ -210,7 +229,7 @@ export const certificatesData = {
 export const certificatesSkillsArray = [
   {
     title: 'Programming Languages',
-    bullets: ['C', 'Python', 'JavaScript', 'TypeScript'],
+    bullets: ['JavaScript', 'TypeScript'],
   },
   {
     title: 'Technical Skills',
@@ -221,9 +240,9 @@ export const certificatesSkillsArray = [
       'Data Structures',
       'Algorithms',
       'React',
+      'Next.js',
       'REST APIs',
       'Agile',
-      'RDBMS',
     ],
   },
 ];
@@ -264,6 +283,28 @@ export const certificatesArray = [
     title: 'ITI PHP Winter Training',
     image: 'assets/images/certificates/itiphp.jpg',
     text: 'I participated in the ITI PHP Winter Training, where I acquired a solid understanding of the fundamentals of Relational Database Management Systems (RDBMS), PHP, and Laravel. This training provided me with essential skills in database management, server-side scripting, and modern PHP frameworks.',
+  },
+];
+
+export const awardsData = {
+  title: sectionNames.awards,
+  description:
+    'In this page, you will find information about the awards I have received, recognizing my achievements and dedication in various fields. These awards highlight my hard work, excellence, and commitment to continuous growth. Each honor reflects my passion for innovation, teamwork, and making a meaningful impact in my professional journey.',
+  image: 'assets/images/awards/awards.webp',
+};
+
+export const awardsArray = [
+  {
+    title: '2nd Place Winner – Creativa Hackathon',
+    image: 'assets/images/awards/creativa.jpg',
+    text: 'Collaborated as a Front-End Developer in a winning team out of 30+ teams, contributing to our graduation project idea.',
+    link: 'https://www.facebook.com/CreativaManoura/posts/pfbid02VH9xns5wMvaJYLmHB1PKq7193GYX3sA86HhSMr8Q2d3DioyHe4yxWnndgJyr5tC2l',
+  },
+  {
+    title: '1st Place Winner – IEEE Competition',
+    image: 'assets/images/awards/ieee.jpg',
+    text: "Contributed as Best Front-End Developer in a winning team among 39 teams and over 230 participants. Recognized for outstanding UI implementation that played a key role in our team's success.",
+    link: 'https://www.facebook.com/IEEEManSB/posts/pfbid02pFyM9EUFBzPsxpPZBtsZGyuxu72gXoVgHCAHZN85uWc4uAQ5cKiAtAhfhrF7oVCAl',
   },
 ];
 
